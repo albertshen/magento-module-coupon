@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<!--
+/**
+ * Copyright © PHPDigital, Inc. All rights reserved.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="AlbertMage\Coupon\Api\CouponManagementInterface" type="AlbertMage\Coupon\Model\CouponManagement"/>
+    <preference for="AlbertMage\Coupon\Api\Data\CouponSearchResultsInterface" type="AlbertMage\Coupon\Model\CouponSearchResults"/>
+    <preference for="AlbertMage\Coupon\Api\Data\CouponInterface" type="AlbertMage\Coupon\Model\Coupon"/>
+</config>

@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+    <route url="/V2/sales/coupons" method="GET">
+        <service class="AlbertMage\Coupon\Api\CouponManagementInterface" method="getList"/>
+        <resources>
+            <resource ref="self" />
+        </resources>
+        <data>
+            <parameter name="customerId" force="true">%customer_id%</parameter>
+        </data>
+    </route>
+    <route url="/V2/checkout/applied/coupons" method="GET">
+        <service class="AlbertMage\Coupon\Api\CouponManagementInterface" method="getAppliedCoupons"/>
+        <resources>
+            <resource ref="self" />
+        </resources>
+        <data>
+            <parameter name="cartId" force="true">%cart_id%</parameter>
+        </data>
+    </route>
+    <route url="/V2/checkout/mine/coupons/set" method="POST">
+        <service class="AlbertMage\Coupon\Api\CouponManagementInterface" method="setCoupon"/>
+        <resources>
+            <resource ref="self" />
+        </resources>
+        <data>
+            <parameter name="cartId" force="true">%cart_id%</parameter>
+        </data>
+    </route>
+    <route url="/V2/checkout/mine/coupons/remove" method="GET">
+        <service class="AlbertMage\Coupon\Api\CouponManagementInterface" method="removeCoupon"/>
+        <resources>
+            <resource ref="self" />
+        </resources>
+        <data>
+            <parameter name="cartId" force="true">%cart_id%</parameter>
+        </data>
+    </route>
+</routes>
